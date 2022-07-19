@@ -2,6 +2,8 @@
 
 ## Usage
 
+From a fresh OS install, run the following:
+
 macOS:
 ```
 wget https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/mac.sh -O - | bash
