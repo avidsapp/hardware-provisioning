@@ -89,12 +89,6 @@ brew install docker-compose
 mkdir -p ~/.docker/cli-plugins
 ln -sfn /usr/local/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 
-###########
-# CLEANUP #
-###########
-
-npm audit fix
-
 ##########
 # REBOOT #
 ##########

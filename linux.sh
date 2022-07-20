@@ -179,7 +179,6 @@ sudo apt install -y gstreamer1.0-libav ffmpeg
 
 sudo apt update -y && sudo apt upgrade -y
 sudo apt autoremove -y
-npm audit fix
 
 ##########
 # REBOOT #
