@@ -1,8 +1,8 @@
 #!/bin/bash
 
-###################
-# MADE FOR UBUNTU #
-###################
+######################
+# MADE FOR UBUNTU 22 #
+######################
 
 ###########################
 # PWAs - Manually install #
@@ -109,10 +109,26 @@ chmod +x ~/.docker/cli-plugins/docker-compose
 # DESKTOP CUSTOMIZATIONS #
 ##########################
 
+# Disable wifi
+nmcli radio wifi off
+
 # Gnome Tweaks
 sudo apt install -y dbus-x11
 sudo apt install -y gnome-tweaks
 sudo apt install -y dconf-editor
+
+# Disable location services
+gsettings set org.gnome.system.location enabled false
+
+# Disable lock screen notifications
+gsettings set org.gnome.desktop.screensaver show-notifications false
+
+# Disable recent files
+gsettings set org.gnome.desktop.privacy remember-recent-files false
+
+# Enable automatic removal of old trash/temp
+gsettings set org.gnome.desktop.privacy remove-old-trash-files true
+gsettings set org.gnome.desktop.privacy remove-old-temp-files true
 
 # Disable scroll button click to paste
 gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
@@ -127,11 +143,16 @@ gsettings set org.gnome.mutter edge-tiling false
 gsettings set org.gnome.shell.overrides edge-tiling false
 
 # Enable natural scrolling
+gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
 
 # Enable night light and decrease default temp
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
-gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 2000
+gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 4000
+
+# Enable dark mode
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+gsettings set org.gnome.shell.ubuntu color-scheme prefer-dark
 
 ############################
 # APPLE HEIF COMPATIBILITY #
