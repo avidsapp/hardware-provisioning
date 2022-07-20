@@ -15,8 +15,8 @@
 sudo su
 
 # ENV VARS
-time_zone=America/Denver
-docker_compose_url=https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64
+export TIME_ZONE=America/Denver
+export DOCKER_COMPOSE_URL=https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64
 
 # REMOVE CMDTEST
 sudo apt remove -y cmdtest
@@ -29,7 +29,7 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y aptitude
 
 # Set TimeZone
-sudo timedatectl set-timezone $time_zone
+sudo timedatectl set-timezone $TIME_ZONE
 
 # Install NPM
 sudo apt install -y npm
@@ -51,7 +51,7 @@ nvm install 16.13.0
 # Install screen - for managing clients
 sudo apt install -y screen
 
-# Install rename -
+# Install rename
 sudo apt install -y rename
 
 # Install yarn - package manager
@@ -59,9 +59,6 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update
 sudo apt install --no-install-recommends -y yarn
-
-# Install dconf-editor - edits Linux components
-sudo apt install -y dconf-editor
 
 # Install NMAP - network testing
 sudo apt install -y nmap
@@ -121,21 +118,20 @@ sudo snap install rpi-imager
 ##########
 
 # Install Docker via snap
+echo "### DOCKER ###"
 sudo snap install docker
-
 sudo addgroup --system docker
 sudo adduser $USER docker
-# newgrp docker
 sudo snap disable docker
 sudo snap enable docker
+echo "### DOCKER INSTALLED ###"
 
 # Install docker-compose
+echo "### DOCKER-COMPOSE ###"
 mkdir -p ~/.docker/cli-plugins/
-curl -SL $docker_compose_url -o ~/.docker/cli-plugins/docker-compose
+curl -SL $DOCKER_COMPOSE_URL -o ~/.docker/cli-plugins/docker-compose
 chmod +x ~/.docker/cli-plugins/docker-compose
-
-# Install Compose Switch
-curl -fL https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
+echo "### DOCKER-COMPOSE INSTALLED ###"
 
 #############
 # SNAPCRAFT #
@@ -148,9 +144,9 @@ sudo snap install snapcraft --classic
 # DROPBOX #
 ###########
 
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-
-# The following line will open a browser window to login to your Dropbox account
+# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+#
+# # The following line will open a browser window to login to your Dropbox account
 # ~/.dropbox-dist/dropboxd
 
 ##########################
@@ -158,7 +154,9 @@ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 ##########################
 
 # Gnome Tweaks
-sudo apt install gnome-tweaks
+sudo apt install -y dbus-x11
+sudo apt install -y gnome-tweaks
+sudo apt install -y dconf-editor
 
 # Disable scroll button click to paste
 gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false

@@ -15,4 +15,5 @@ wget https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/lin
 ```
 
 ## TO DO
-- `~/.dropbox-dist/dropboxd` daemon
+Linux:
+  - Fix Dropbox integration and create daemon
