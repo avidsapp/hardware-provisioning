@@ -13,11 +13,7 @@
 # Standard Notes
 
 # ENV VARS
-export TIME_ZONE=America/Denver
 export DOCKER_COMPOSE_URL=https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64
-
-# Set TimeZone
-sudo timedatectl set-timezone $TIME_ZONE
 
 # Install basics
 sudo apt remove -y cmdtest
