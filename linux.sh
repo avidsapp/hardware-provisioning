@@ -158,7 +158,7 @@ gsettings set org.gnome.desktop.interface clock-show-weekday true
 
 # Disable double-click maximize on titlebar and remove minimize/maximize
 gsettings set org.gnome.desktop.wm.preferences action-double-click-titlebar 'none'
-gsettings set org.gnome.desktop.wm.preferences button-layout minimize,maximize:
+gsettings set org.gnome.desktop.wm.preferences button-layout :close
 
 # Disable attach modal dialogs
 gsettings set org.gnome.mutter attach-modal-dialogs false
