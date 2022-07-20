@@ -1,5 +1,7 @@
 # Provisioning Scripts
 
+To make life easier
+
 ## Usage
 
 From a fresh OS install, run the following, entering your sudo user password when prompted:

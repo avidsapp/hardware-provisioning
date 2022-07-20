@@ -26,8 +26,6 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y aptitude
 sudo apt install -y npm
 sudo apt install -y curl
-
-# Install extras
 sudo apt install -y screen
 sudo apt install -y rename
 sudo apt install -y nmap
@@ -78,7 +76,7 @@ newgrp lxd
 sudo apt remove snapcraft
 sudo snap install snapcraft --classic
 
-# Install program snaps
+# Install programs
 sudo snap install bitwarden
 sudo snap install bw
 sudo snap install atom --classic

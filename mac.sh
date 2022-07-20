@@ -1,8 +1,8 @@
 #!/bin/bash
 
-##################
-# MADE FOR MACOS #
-##################
+###########################
+# MADE FOR MACOS MONTEREY #
+###########################
 
 # Install macOS command line developer tools
 xcode-select --install
@@ -15,10 +15,8 @@ brew update
 brew install java
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
-# Remove Node installed by homebrew
-brew uninstall --force node
-
 # Install NVM
+brew uninstall --force node
 brew install nvm
 mkdir ~/.nvm
 printf "export NVM_DIR=~/.nvm" >> ~/.zshrc
@@ -30,16 +28,10 @@ nvm install node
 nvm install 16.13.0
 nvm use 16.13.0
 
-# Install pyenv
+# Install basics
 brew install pyenv
-
-# Install screen - for managing clients
 brew install screen
-
-# Install yarn - package manager
 brew install yarn
-
-# Install NMAP - network testing
 brew install nmap
 
 # Install Google Cloud SDK
@@ -47,67 +39,33 @@ brew install --cask google-cloud-sdk
 printf 'source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"' >> ~/.zshrc
 source ~/.zshrc
 
-# Install Gatsby CLI
-brew install gatsby-cli
-
 # Install Make
 brew install make
 printf 'PATH="/usr/local/opt/make/libexec/gnubin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 
-# Install Google Drive
-brew install --cask google-drive
-
-# Install Dropbox
-brew install --cask dropbox
-
-# Install Atom
-brew install --cask atom
-
-# Install Visual Studio Code
-brew install --cask visual-studio-code
-
-# Install Slack
-brew install --cask slack
-
-# Install Chromium
-brew install --cask chromium
-
-# Install Brave
-brew install --cask brave-browser
-
-# Install Firefox
-brew install --cask firefox
-
-# Install Spotify
-brew install --cask spotify
-
-# Install Bitwarden & CLI
-brew install --cask bitwarden
+# Install CLIs
+brew install gatsby-cli
 brew install bitwarden-cli
 
-# Install Raspberry Pi Imager
+# Install programs
+brew install --cask google-drive
+brew install --cask dropbox
+brew install --cask atom
+brew install --cask visual-studio-code
+brew install --cask slack
+brew install --cask chromium
+brew install --cask brave-browser
+brew install --cask firefox
 brew install --cask raspberry-pi-imager
-
-# Install ProtonVPN
+brew install --cask bitwarden
 brew install --cask protonvpn
-
-# Install Discord
+brew install --cask spotify
 brew install --cask discord
-
-# Install Standard Notes
 brew install --cask standard-notes
-
-# Install VSee
 brew install --cask vsee
-
-# Install Adobe CC
 brew install --cask adobe-creative-cloud
-
-# Install Autodesk Fusion 360
 brew install --cask autodesk-fusion360
-
-# Install Ultimaker-Cura
 brew install --cask ultimaker-cura
 
 # Install other non-homebrew managed packages
@@ -131,8 +89,19 @@ brew install docker-compose
 mkdir -p ~/.docker/cli-plugins
 ln -sfn /usr/local/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 
+###########
+# CLEANUP #
+###########
+
+npm audit fix
+
 ##########
 # REBOOT #
 ##########
 
-sudo reboot
+echo "#######################################"
+echo "#                                     #"
+echo "#   The setup script has completed!   #"
+echo "#   Reboot your machine. K Bye!       #"
+echo "#                                     #"
+echo "#######################################"
