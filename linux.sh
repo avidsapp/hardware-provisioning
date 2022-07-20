@@ -173,6 +173,10 @@ gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 
 # Center and detach dock
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+# gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+# gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
+gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
 
 # Remove auto/drag to top/click to maximize
 gsettings set org.gnome.mutter auto-maximize false
