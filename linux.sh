@@ -27,7 +27,9 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y aptitude
 
 # Set TimeZone
+echo "### TIMEZONE ###"
 sudo timedatectl set-timezone $TIME_ZONE
+echo "### TIMEZONE SET ###"
 
 # Install NPM
 sudo apt install -y npm
@@ -36,15 +38,19 @@ sudo apt install -y npm
 sudo apt install -y curl
 
 # Install NVM
+echo "### NVM ###"
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.profile
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+echo "### NVM INSTALLED ###"
 
 # Install Node using NVM
+echo "### NODE ###"
 nvm install v16
 nvm install 16.13.0
+echo "### NODE INSTALLED ###"
 
 # Install screen - for managing clients
 sudo apt install -y screen
@@ -53,15 +59,15 @@ sudo apt install -y screen
 sudo apt install -y rename
 
 # Install yarn - package manager
+echo "### YARN ###"
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update
 sudo apt install --no-install-recommends -y yarn
-
-# Install NMAP - network testing
-sudo apt install -y nmap
+echo "### YARN INSTALLED ###"
 
 # Install NPM Packages
+echo "### NPM PACKAGES ###"
 npm install -g npm@latest
 npm install -g gatsby-cli
 npm install -g make
@@ -69,9 +75,15 @@ npm install -g node-gyp
 npm install -g usb
 npm install -g json
 npm install -g firebase-tools
+echo "### NPM PACKAGES INSTALLED ###"
 
 # Update Python3 environment
+echo "### PYTHON ###"
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
+echo "### PYTHON INSTALLED ###"
+
+# Install NMAP - network testing
+sudo apt install -y nmap
 
 #########
 # SNAPS #
@@ -182,7 +194,6 @@ sudo apt install -y gstreamer1.0-libav ffmpeg
 
 sudo apt update -y && sudo apt upgrade -y
 sudo apt autoremove -y
-npm audit fix
 
 ##########
 # REBOOT #
