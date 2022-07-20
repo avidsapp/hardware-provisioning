@@ -69,12 +69,10 @@ sudo apt install -y nmap
 # Install NPM Packages
 npm install -g npm@latest
 npm install -g gatsby-cli
-npm install -g @gatsbystorefront/gatsby-theme-storefront-shopify
 npm install -g make
 npm install -g node-gyp
 npm install -g usb
 npm install -g json
-# npm install -g electron-forge
 npm install -g firebase-tools
 
 # Update Python3 environment
@@ -118,18 +116,13 @@ sudo snap install firefox
 # Install Raspberry Pi Imager
 sudo snap install rpi-imager
 
-#############
-# SNAPCRAFT #
-#############
-
-sudo apt remove snapcraft
-sudo snap install snapcraft --classic
-
 ##########
 # Docker #
 ##########
 
 # Install Docker via snap
+sudo snap install docker
+
 sudo addgroup --system docker
 sudo adduser $USER docker
 # newgrp docker
@@ -143,6 +136,13 @@ chmod +x ~/.docker/cli-plugins/docker-compose
 
 # Install Compose Switch
 curl -fL https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
+
+#############
+# SNAPCRAFT #
+#############
+
+sudo apt remove snapcraft
+sudo snap install snapcraft --classic
 
 ###########
 # DROPBOX #
