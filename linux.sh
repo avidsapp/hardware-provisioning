@@ -4,12 +4,18 @@
 # MADE FOR UBUNTU #
 ###################
 
+###########################
+# PWAs - Manually install #
+###########################
+# Spotify - https://open.spotify.com/browse/featured?pwa=1
+# Discord
+# Slack
+# Standard Notes
+
 sudo su
 
-echo -n "What time zone are you in? e.g. - America/Denver"
-read -r time_zone
-
 # ENV VARS
+time_zone=America/Denver
 docker_compose_url=https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64
 
 # REMOVE CMDTEST
@@ -71,15 +77,24 @@ npm install -g firebase-tools
 # Update Python3 environment
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
 
-#######################
-# APPLE COMPATIBILITY #
-#######################
+##########
+# Docker #
+##########
 
-# HEIF thumbnails
-sudo apt install -y heif-thumbnailer
-sudo add-apt-repository -y ppa:strukturag/libheif
-sudo apt install -y libheif-examples
-sudo apt install -y gstreamer1.0-libav ffmpeg
+# Install Docker via snap
+sudo addgroup --system docker
+sudo adduser $USER docker
+# newgrp docker
+sudo snap disable docker
+sudo snap enable docker
+
+# Install docker-compose
+mkdir -p ~/.docker/cli-plugins/
+curl -SL $docker_compose_url -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+
+# Install Compose Switch
+curl -fL https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
 
 #########
 # SNAPS #
@@ -99,7 +114,7 @@ sudo snap install bitwarden
 sudo snap install bw
 
 # Install Atom
-sudo snap install atom
+sudo snap install atom --classic
 
 # Install Visual Studio Code
 sudo snap install code --classic
@@ -118,17 +133,6 @@ sudo snap install firefox
 
 # Install Raspberry Pi Imager
 sudo snap install rpi-imager
-
-# Gnome Tweaks
-sudo apt install gnome-tweak-tool
-
-########
-# PWAs #
-########
-# Spotify - https://open.spotify.com/browse/featured?pwa=1
-# Discord
-# Slack
-# Standard Notes
 
 #############
 # SNAPCRAFT #
@@ -150,6 +154,9 @@ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 # DESKTOP CUSTOMIZATIONS #
 ##########################
 
+# Gnome Tweaks
+sudo apt install gnome-tweaks
+
 # Disable scroll button click to paste
 gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 
@@ -161,24 +168,14 @@ gsettings set org.gnome.mutter auto-maximize false
 gsettings set org.gnome.mutter edge-tiling false
 gsettings set org.gnome.shell.overrides edge-tiling false
 
-##########
-# Docker #
-##########
+############################
+# APPLE HEIF COMPATIBILITY #
+############################
 
-# Install Docker via snap
-sudo addgroup --system docker
-sudo adduser $USER docker
-# newgrp docker
-sudo snap disable docker
-sudo snap enable docker
-
-# Install docker-compose
-mkdir -p ~/.docker/cli-plugins/
-curl -SL $docker_compose_url -o ~/.docker/cli-plugins/docker-compose
-chmod +x ~/.docker/cli-plugins/docker-compose
-
-# Install Compose Switch
-curl -fL https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
+sudo apt install -y heif-thumbnailer
+sudo add-apt-repository -y ppa:strukturag/libheif
+sudo apt install -y libheif-examples
+sudo apt install -y gstreamer1.0-libav ffmpeg
 
 ###########
 # CLEANUP #
