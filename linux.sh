@@ -40,6 +40,9 @@ sudo apt install -y curl
 # Install NVM
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.profile
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Install Node using NVM
 nvm install v16
@@ -76,25 +79,6 @@ npm install -g firebase-tools
 
 # Update Python3 environment
 sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
-
-##########
-# Docker #
-##########
-
-# Install Docker via snap
-sudo addgroup --system docker
-sudo adduser $USER docker
-# newgrp docker
-sudo snap disable docker
-sudo snap enable docker
-
-# Install docker-compose
-mkdir -p ~/.docker/cli-plugins/
-curl -SL $docker_compose_url -o ~/.docker/cli-plugins/docker-compose
-chmod +x ~/.docker/cli-plugins/docker-compose
-
-# Install Compose Switch
-curl -fL https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
 
 #########
 # SNAPS #
@@ -141,6 +125,25 @@ sudo snap install rpi-imager
 sudo apt remove snapcraft
 sudo snap install snapcraft --classic
 
+##########
+# Docker #
+##########
+
+# Install Docker via snap
+sudo addgroup --system docker
+sudo adduser $USER docker
+# newgrp docker
+sudo snap disable docker
+sudo snap enable docker
+
+# Install docker-compose
+mkdir -p ~/.docker/cli-plugins/
+curl -SL $docker_compose_url -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+
+# Install Compose Switch
+curl -fL https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
+
 ###########
 # DROPBOX #
 ###########
@@ -148,7 +151,7 @@ sudo snap install snapcraft --classic
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
 # The following line will open a browser window to login to your Dropbox account
-~/.dropbox-dist/dropboxd
+# ~/.dropbox-dist/dropboxd
 
 ##########################
 # DESKTOP CUSTOMIZATIONS #
@@ -189,4 +192,4 @@ npm audit fix
 # REBOOT #
 ##########
 
-sudo reboot
+# sudo reboot

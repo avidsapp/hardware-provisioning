@@ -13,3 +13,6 @@ Ubuntu:
 ```
 wget https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/linux.sh -O - | bash
 ```
+
+## TO DO
+- `~/.dropbox-dist/dropboxd` daemon
