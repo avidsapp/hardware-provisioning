@@ -4,6 +4,8 @@
 # MADE FOR UBUNTU #
 ###################
 
+sudo su
+
 echo -n "What time zone are you in? e.g. - America/Denver"
 read -r time_zone
 
