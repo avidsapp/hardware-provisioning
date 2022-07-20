@@ -154,6 +154,18 @@ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 40
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.shell.ubuntu color-scheme prefer-dark
 
+# Change clock format
+gsettings set org.gnome.desktop.interface clock-format 12h
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+
+# Disable double-click maximize on titlebar and remove minimize/maximize
+gsettings set org.gnome.desktop.wm.preferences action-double-click-titlebar 'none'
+gsettings set org.gnome.desktop.wm.preferences button-layout minimize,maximize:
+
+# Disable attach modal dialogs
+gsettings set org.gnome.mutter attach-modal-dialogs false
+gsettings set org.gnome.mutter center-new-windows true
+
 ############################
 # APPLE HEIF COMPATIBILITY #
 ############################
