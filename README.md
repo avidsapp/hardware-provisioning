@@ -6,9 +6,9 @@ To make life easier
 
 From a fresh OS install, run the following, entering your sudo user password when prompted:
 
-macOS Monterey:
+macOS BigSur/Monterey:
 ```
-wget https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/mac.sh -O - | bash
+curl https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/mac.sh -o - | bash
 ```
 
 Ubuntu 22:
