@@ -4,11 +4,7 @@
 # MADE FOR MACOS MONTEREY #
 ###########################
 
-# Install macOS command line developer tools
-xcode-select --install
-
-# Install Homebrew
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+# update Homebrew
 brew update
 
 # Install Java
@@ -16,7 +12,9 @@ brew install java
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 # Install NVM
+brew uninstall --ignore-dependencies node
 brew uninstall --force node
+brew update
 brew install nvm
 mkdir ~/.nvm
 printf "export NVM_DIR=~/.nvm" >> ~/.zshrc
