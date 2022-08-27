@@ -9,13 +9,17 @@ brew update
 
 # Install Java
 brew install java
-# sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+sleep 30
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 # Install NVM
 brew uninstall --ignore-dependencies node
 brew uninstall --force node
 brew update
 brew install nvm
+
+sleep 30
 mkdir ~/.nvm
 printf "export NVM_DIR=~/.nvm" >> ~/.zshrc
 printf "source $(brew --prefix nvm)/nvm.sh" >> ~/.zshrc
@@ -34,11 +38,15 @@ brew install nmap
 
 # Install Google Cloud SDK
 brew install --cask google-cloud-sdk
+
+sleep 30
 printf 'source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"' >> ~/.zshrc
 source ~/.zshrc
 
 # Install Make
 brew install make
+
+sleep 30
 printf 'PATH="/usr/local/opt/make/libexec/gnubin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 
@@ -66,6 +74,9 @@ brew install --cask adobe-creative-cloud
 brew install --cask autodesk-fusion360
 brew install --cask ultimaker-cura
 
+
+sleep 30
+
 # Install other non-homebrew managed packages
 npm install -g node-gyp
 npm install -g usb
@@ -84,6 +95,8 @@ brew install --cask 4d63/dockerhost/dockerhost
 
 # Install docker-compose
 brew install docker-compose
+
+sleep 30
 mkdir -p ~/.docker/cli-plugins
 ln -sfn /usr/local/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 
