@@ -25,18 +25,13 @@ brew install findutils
 # Install Bash 4
 brew install bash
 
-# Install more recent versions of some OS X tools
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
-
 # Brew packages that I use alot.
 brew install wget
 brew install python
-brew install caskroom/cask/brew-cask
 
 # Install Java
 brew install java
-ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 # Install NVM
 brew uninstall --ignore-dependencies node
