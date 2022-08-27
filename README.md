@@ -8,10 +8,7 @@ From a fresh OS install, run the following, entering your sudo user password whe
 
 macOS Catalina+:
 ```
-xcode-select --install
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-curl https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/mac-1.sh -o - | bash
-curl https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/mac-2.sh -o - | bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/mac.sh)"
 ```
 
 Ubuntu 22:
