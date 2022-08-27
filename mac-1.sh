@@ -14,6 +14,7 @@ brew install java
 brew uninstall --ignore-dependencies node
 brew uninstall --force node
 brew update
+brew install node
 brew install nvm
 
 # Install basics
