@@ -115,9 +115,9 @@ ln -sfn /usr/local/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/d
 # REBOOT #
 ##########
 
-echo "#########################################"
-echo "#                                       #"
-echo "#   The setup script 1 has completed!   #"
-echo "#   Run setup script 2. K Bye!          #"
-echo "#                                       #"
-echo "#########################################"
+echo "#######################################"
+echo "#                                     #"
+echo "#   The setup script has completed!   #"
+echo "#   Reboot your machine. K Bye!       #"
+echo "#                                     #"
+echo "#######################################"
