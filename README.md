@@ -8,7 +8,7 @@ From a fresh OS install, run the following, entering your sudo user password whe
 
 macOS Catalina+:
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/mac.sh)"
+/bin/bash -c "$(curl https://raw.githubusercontent.com/avidsapp/hardware-provisioning/master/mac.sh)"
 ```
 
 Ubuntu 22:
