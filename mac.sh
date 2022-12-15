@@ -111,6 +111,9 @@ brew install docker-compose
 mkdir -p ~/.docker/cli-plugins
 ln -sfn /usr/local/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 
+# Symlink SSH credentials
+ln -s ~/dev/ssh/ssh-config.txt ~/.ssh/config
+
 ##########
 # REBOOT #
 ##########

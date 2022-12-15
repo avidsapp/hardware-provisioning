@@ -160,6 +160,9 @@ gsettings set org.gnome.desktop.wm.preferences button-layout :close
 gsettings set org.gnome.mutter attach-modal-dialogs false
 gsettings set org.gnome.mutter center-new-windows true
 
+# Symlink SSH credentials
+ln -s ~/dev/ssh/ssh-config.txt ~/.ssh/config
+
 ############################
 # APPLE HEIF COMPATIBILITY #
 ############################
