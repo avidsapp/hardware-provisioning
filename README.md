@@ -18,13 +18,13 @@ Windows 11:
   1. Install Windows Subsystem for Linux - `wsl --install` and setup username and pw
   1. Enable WSL - Search "Turn Windows Features on or off" > Enable "Windows Subsystem for Linux"
   1. Install Git - `winget install --id Git.Git -e --source winget` and config:
-    1. `git config --global user.email "you@example.com"`
-    1. `git config --global user.name "Your Name"`
+      1. `git config --global user.email "you@example.com"`
+      1. `git config --global user.name "Your Name"`
   1. Symlink ssh-config - `mklink /H %userprofile%\.ssh\config %userprofile%\dev\ssh\ssh-config.txt`
   1. Open WSL Terminal:
-    1. `sudo apt-get install curl`
-    1. `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash`
-    1. `nvm install --lts`
+      1. `sudo apt-get install curl`
+      1. `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash`
+      1. `nvm install --lts`
 
 macOS Catalina+:
 ```
